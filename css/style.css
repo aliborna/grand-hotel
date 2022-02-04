@@ -75,8 +75,49 @@ body {
 /* navigation */
 .navigation {
     margin-left: 8rem;
-    /* border: 1px solid #ccc; */
-    border: 1px solid #fff;
+    position: fixed;
+    width: 40rem;
+    height: 100%;
+    background: linear-gradient(to top, rgba(34, 32, 41, 1), rgba(34, 32, 41, .8)),url('../img/nav-bg.jpeg') center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-heading {
+    letter-spacing: .2rem;
+    font-size: 'Josefin sans', sans-serif;
+    font-size: 3.5rem;
+    color: #deaa86;
+    font-weight: 300;
+    text-align: center;
+}
+
+.navigation-search {
+    position: relative;
+}
+
+.navigation-input-search {
+    width: 30rem;
+    letter-spacing: .2rem;
+    color: #deaa86;
+    font-size: 'Josefin sans', sans-serif;
+    outline: none;
+    border: 1px solid #555;
+    background: rgba(0, 0, 0, .3);
+    padding: 1rem 2rem;
+    border-radius: 10rem;
+}
+
+.navigation-search-btn {
+    background: transparent;
+    border: none;
+    color: #deaa86;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
 }
 
 /* end of navigation */
