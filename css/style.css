@@ -23,11 +23,13 @@ body {
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        z-index: 10;
     }
     
     .menu-icon {
         margin-top: 3rem;
         cursor: pointer;
+        height: 6rem;
     }
 
     .line {
@@ -74,8 +76,8 @@ body {
 /* end of sidebar */
 /* navigation */
 .navigation {
-    margin-left: 8rem;
     position: fixed;
+    left: -32rem;
     width: 40rem;
     height: 100%;
     background: linear-gradient(to top, rgba(34, 32, 41, 1), rgba(34, 32, 41, .8)),url('../img/nav-bg.jpeg') center no-repeat;
@@ -84,6 +86,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    transition: left .3s cubic-bezier(1, 0, 0, 1);
 }
 
 .navigation-heading {
@@ -118,6 +121,88 @@ body {
     position: absolute;
     top: 1rem;
     right: 1rem;
+}
+
+.navigation-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 28rem;
+    padding: 0;
+}
+
+.navigation-link {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: .3;
+    font-size: 'Josefin sans', sans-serif;
+    font-weight: 300;
+    transition: color .5s;
+}
+
+.navigation-item {
+    position: relative;
+}
+
+.navigation-link:hover {
+    color: #deaa86;
+}
+
+.navigation-link::before {
+    content: "";
+    background-color: #fff;
+    width: 0rem;
+    height: .1rem;
+    position: absolute;
+    top: 1rem;
+    left:-4rem;
+    transition: width cubic-bezier(1, 0, 0, 1).5s;
+}
+
+.navigation-link::after{
+    content: "";
+    background-color: #fff;
+    width: 0rem;
+    height: .1rem;
+    position: absolute;
+    top: 1rem;
+    right:-4rem;
+    transition: width cubic-bezier(1, 0, 0, 1) .5s ;
+}
+
+.navigation-link:hover::after,
+.navigation-link:hover::before {
+    background-color: #deaa86;
+    width: 3rem;
+}
+
+.copyright {
+    color: #fff;
+    font-size: 'Josefin sans', sans-serif;
+    font-size: 1.2rem;
+}
+
+.checkbox {
+    display: none;
+}
+
+.checkbox:checked ~ .navigation {
+    left: 8rem;
+}
+
+.checkbox:checked ~ .sidebar .line-1 {
+    transform: rotate(-405deg) translate(0px, 2px);
+}
+
+.checkbox:checked ~ .sidebar .line-2 {
+    display: none;
+}
+
+.checkbox:checked ~ .sidebar .line-3 {
+    transform: rotate(405deg) translate(-4px, -6px);
 }
 
 /* end of navigation */
